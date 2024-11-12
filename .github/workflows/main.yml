@@ -17,7 +17,7 @@ jobs:
               python-version: '3.11'
 
           - name: Run script
-            run: python ./Roadmap/main.py
+            run: python main.py #./Roadmap/main.py
 
           - name: Commit and Push changes
             uses: stefanzweifel/git-auto-commit-action@v5
