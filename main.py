@@ -6,12 +6,12 @@ if s_system == "Linux":
     folder_path = '/'.join(
             inspect.getfile(  inspect.currentframe()  )\
                 .split('/')[0:-1]
-    ) + '/'
+    ) + '/'+'DATA/RESULT/
 elif s_system == "Windows":
     folder_path = '\\'.join(
             inspect.getfile(  inspect.currentframe()  )\
                 .split('\\')[0:-1]
-    ) + '\\'
+    ) + '\\'+'DATA\\RESULT\\
 
 logging.info(   f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}'   ) ;  print(f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}')
 logging.info(   f'⚠️ EL SISTEMA OPERATIVO ⏩ {s_system}'   ) 
@@ -30,10 +30,11 @@ s_UserAgent = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebK
 # ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 resp = requests.get(   s_target_url,
                     headers = s_UserAgent   )
+resp.encoding = 'utf-8' 
 
-s_result = str(  resp.text  )
+s_result = resp.text
 # ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 open( s_path_result_to_save  ,  'w' , encoding = 'utf-8' )\
-    .write(  s_result  )
+    .write(  s_result.encode('utf-8')  )
 
 s_fecha_fin_ejecucion = str(  datetime.today().strftime('%Y-%m-%d %H-%M-%S') )
