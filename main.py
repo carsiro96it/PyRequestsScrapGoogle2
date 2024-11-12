@@ -1,4 +1,4 @@
-import inspect, platform , requests
+import inspect, logging, platform , requests
 from datetime import datetime
 
 if platform.system() == "Windows":
@@ -12,6 +12,7 @@ elif platform.system() == "Linux":
                 .split('\\')[0:-1]
     ) + '\\'
 
+logging.info(   f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}'   ) ; print(f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}')
 s_fecha_inicio_ejecucion = str(  datetime.today().strftime('%Y-%m-%d %H-%M-%S') ) ; s_fecha_inicio_ejecucion=''
 
 s_result = folder_path +'\\DATA\\RESULT\\result.html'
