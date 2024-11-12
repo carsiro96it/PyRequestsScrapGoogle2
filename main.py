@@ -2,9 +2,9 @@ import inspect, logging, platform , requests
 from datetime import datetime
 
 if platform.system() == "Windows":
-    folder_path = '\\'.join(
+    folder_path = '/'.join(
             inspect.getfile(  inspect.currentframe()  )\
-                .split('\\')[0:-1]
+                .split('/')[0:-1]
     ) + '/'
 elif platform.system() == "Linux":
     folder_path = '\\'.join(
