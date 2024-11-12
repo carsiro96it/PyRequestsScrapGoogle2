@@ -19,7 +19,7 @@ logging.info(   f'⚠️ EL SISTEMA OPERATIVO ⏩ {s_system}'   )
 s_fecha_inicio_ejecucion = str(  datetime.today().strftime('%Y-%m-%d %H-%M-%S') ) ; s_fecha_inicio_ejecucion=''
 
 # s_result = folder_path +'\\DATA\\RESULT\\result.html'
-s_result = folder_path +'/result.html'
+s_result = folder_path +'result.html'
 s_path_result_to_save = folder_path  +'DATA\\RESULT\\results_Google_'+ s_fecha_inicio_ejecucion   + '.html'
 
 s_target_url = "https://www.bing.com/search?pglt=43&q=qu%C3%A9+han+aprobado+en+el+congreso+de+diputados+after%3A11-11-2024"
