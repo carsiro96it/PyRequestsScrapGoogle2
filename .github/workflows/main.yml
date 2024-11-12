@@ -6,7 +6,10 @@ on:
 jobs:
   build:
       runs-on: ubuntu-latest
-        
+
+      permissions:
+        contents: write
+      
       steps:
           - name: Checkout Repo - get access
             uses: actions/checkout@v4
@@ -28,5 +31,5 @@ jobs:
               commit_message: UPDATE RESULT FILES
               commit_user_name: Brais Moure [GitHub Actions]
               commit_user_email: carsiro96.ittools@hotmail.com
-              commit author: CARSIRO96it
+              commit_author: CARSIRO96it
         
