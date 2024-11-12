@@ -1,0 +1,29 @@
+name: Stats
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+      runs-on: ubuntu-latest
+        
+      steps:
+          - name: Checkout Repo - get access
+            uses: actions/checkout@v4
+            
+          - name: Set up Python
+            uses: actions/setup-python@v5
+            with:
+              python-version: '3.11'
+
+          - name: Run script
+            run: python ./Roadmap/main.py
+
+          - name: Commit and Push changes
+          - uses: stefanzweifel/git-auto-commit-action@v5
+            with:
+              commit_message: UPDATE RESULT FILES
+              commit_user_name: Brais Moure [GitHub Actions]
+              commit_user_email: carsiro96.ittools@hotmail.com
+              commit author: CARSIRO96it
+        
