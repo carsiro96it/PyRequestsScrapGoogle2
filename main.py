@@ -13,7 +13,7 @@ elif s_system == "Windows":
                 .split('\\')[0:-1]
     ) + '\\'
 
-logging.info(   f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}'   ) ; print(f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}')
+logging.info(   f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}'   ) ;  print(f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}')
 logging.info(   f'⚠️ EL SISTEMA OPERATIVO ⏩ {s_system}'   ) 
 
 s_fecha_inicio_ejecucion = str(  datetime.today().strftime('%Y-%m-%d %H-%M-%S') ) ; s_fecha_inicio_ejecucion=''
