@@ -1,18 +1,21 @@
 import inspect, logging, platform , requests
 from datetime import datetime
 
-if platform.system() == "Windows":
+s_system = platform.system()
+if s_system == "Linux":
     folder_path = '/'.join(
             inspect.getfile(  inspect.currentframe()  )\
                 .split('/')[0:-1]
     ) + '/'
-elif platform.system() == "Linux":
+elif s_system == "Windows":
     folder_path = '\\'.join(
             inspect.getfile(  inspect.currentframe()  )\
                 .split('\\')[0:-1]
     ) + '\\'
 
 logging.info(   f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}'   ) ; print(f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}')
+logging.info(   f'⚠️ EL SISTEMA OPERATIVO ⏩ {s_system}'   ) 
+
 s_fecha_inicio_ejecucion = str(  datetime.today().strftime('%Y-%m-%d %H-%M-%S') ) ; s_fecha_inicio_ejecucion=''
 
 s_result = folder_path +'\\DATA\\RESULT\\result.html'
