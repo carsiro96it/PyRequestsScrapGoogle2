@@ -1,10 +1,16 @@
-import inspect, requests
+import inspect, platform , requests
 from datetime import datetime
 
-folder_path = '\\'.join(
-        inspect.getfile(  inspect.currentframe()  )\
-            .split('\\')[0:-1]
-) + '\\'
+if platform.system() == "Windows":
+    folder_path = '\\'.join(
+            inspect.getfile(  inspect.currentframe()  )\
+                .split('\\')[0:-1]
+    ) + '/'
+elif platform.system() == "Linux":
+    folder_path = '\\'.join(
+            inspect.getfile(  inspect.currentframe()  )\
+                .split('\\')[0:-1]
+    ) + '\\'
 
 s_fecha_inicio_ejecucion = str(  datetime.today().strftime('%Y-%m-%d %H-%M-%S') ) ; s_fecha_inicio_ejecucion=''
 
