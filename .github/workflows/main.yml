@@ -21,9 +21,14 @@ jobs:
 
           - name: Install libraries
             run: pip install requests
-            
+
+          - name: Set environment to use UTF-8
+            run: |
+              sudo update-locale LANG=en_US.UTF-8
+              export PYTHONIOENCODING=utf-8
+              
           - name: Run script
-            run: python main.py #./Roadmap/main.py
+            run: python main.py #./CARPETA/main.py
             
           # - name: Commit and push results
           # run: |
