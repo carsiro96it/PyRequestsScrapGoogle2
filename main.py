@@ -30,6 +30,10 @@ s_UserAgent = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebK
 # ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 resp = requests.get(   s_target_url,
                     headers = s_UserAgent   )
+content_encoding = resp.headers.get('Content-Encoding')
+print(f"Content-Encoding: {content_encoding}")
+print(f"URL final: {resp.url}")
+print(f"Redirigido: {resp.history}")
 # content_type = resp.headers.get('Content-Type')
 # print(f"Content-Type: {content_type}")
 
