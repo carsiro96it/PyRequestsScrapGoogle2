@@ -20,7 +20,7 @@ jobs:
               python-version: '3.11'
 
           - name: Install libraries
-            run: pip install requests pandas #brotli
+            run: pip install requests pandas lxml #brotli
 
           - name: Set environment to use UTF-8
             run: |
