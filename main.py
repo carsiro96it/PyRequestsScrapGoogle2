@@ -1,4 +1,4 @@
-import inspect, logging, platform , requests, sys
+import brotli, inspect, logging, platform , requests, sys
 from datetime import datetime
 
 s_system = platform.system()
@@ -37,7 +37,15 @@ print(f"Redirigido: {resp.history}")
 # content_type = resp.headers.get('Content-Type')
 # print(f"Content-Type: {content_type}")
 
-resp = resp.content.decode('utf-8', errors='replace')
+# Descomprimir si está codificado con Brotli
+if content_encoding == 'br':
+    # Descomprimir usando Brotli
+    decompressed_content = brotli.decompress(resp.content)
+    # Decodificar el contenido descomprimido como UTF-8
+    resp = decompressed_content.decode('utf-8', errors='replace')
+else:
+    # Si no está comprimido, decodificar directamente
+    resp = resp.content.decode('utf-8', errors='replace')
 # Verificar el tipo de contenido
 
 print(  resp  )
