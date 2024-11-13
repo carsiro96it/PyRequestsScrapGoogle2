@@ -31,7 +31,7 @@ s_UserAgent = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebK
 # ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 resp = requests.get(   s_target_url,
                     headers = s_UserAgent   )
-print(    pd.read_html(resp.text, attrs={'width': '656'}, header=0, parse_dates=['Advertised Date']).head()    )
+# print(    pd.read_html(resp.text, attrs={'width': '656'}, header=0, parse_dates=['Advertised Date']).head()    )
 if resp.status_code == 200:
     content_length = resp.headers.get('Content-Length')
     if content_length and len(resp.content) != int(content_length):
@@ -59,7 +59,7 @@ print(f"Redirigido: {resp.history}")
     # resp = resp.content.decode('utf-8', errors='replace')
 # Verificar el tipo de contenido
 
-print(  resp  )
+s_result =  str(resp.apparent_encoding)
 
 # Guardar el contenido en un archivo
 open( s_path_result_to_save  ,  'w' , encoding = 'utf-8' )\
