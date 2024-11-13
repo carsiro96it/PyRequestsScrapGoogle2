@@ -36,6 +36,12 @@ resp.encoding = resp.apparent_encoding
 print(resp.text[0:10000])
 resp.encoding = 'utf-8'
 print(resp.text[0:10000])
+s_result =  str(resp)
+
+# Guardar el contenido en un archivo
+open( s_path_result_to_save  ,  'w' , encoding = 'utf-8' )\
+    .write(  s_result  )
+
 
 # print(    pd.read_html(resp.text, attrs={'width': '656'}, header=0, parse_dates=['Advertised Date']).head()    )
 if resp.status_code == 200:
@@ -64,11 +70,5 @@ print(f"Redirigido: {resp.history}")
     # Si no está comprimido, decodificar directamente
     # resp = resp.content.decode('utf-8', errors='replace')
 # Verificar el tipo de contenido
-
-s_result =  str(resp)
-
-# Guardar el contenido en un archivo
-open( s_path_result_to_save  ,  'w' , encoding = 'utf-8' )\
-    .write(  s_result  )
 
 s_fecha_fin_ejecucion = str(  datetime.today().strftime('%Y-%m-%d %H-%M-%S') )
