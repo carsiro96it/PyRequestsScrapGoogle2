@@ -43,7 +43,6 @@ else:
     s_result = resp.content
 
 # Guardar el contenido en un archivo
-s_path_result_to_save = 'result.html'
 with open(s_path_result_to_save, 'wb') as file:
     file.write(s_result)
 
