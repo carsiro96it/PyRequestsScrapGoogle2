@@ -34,7 +34,7 @@ resp.encoding = 'utf-8'
 
 s_result = resp.text
 # ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-open( s_path_result_to_save  ,  'wb'  )\
-    .write(  s_result  )
+with open(s_path_result_to_save, 'w', encoding='utf-8') as file:
+    file.write(resp.text)
 
 s_fecha_fin_ejecucion = str(  datetime.today().strftime('%Y-%m-%d %H-%M-%S') )
