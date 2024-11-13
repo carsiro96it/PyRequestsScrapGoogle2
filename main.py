@@ -11,7 +11,7 @@ elif s_system == "Windows":
     folder_path = '\\'.join(
             inspect.getfile(  inspect.currentframe()  )\
                 .split('\\')[0:-1]
-    ) + '\\'+'DATA\\RESULT\\
+    ) + '\\'+'DATA\\RESULT\\'
 
 logging.info(   f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}'   ) ;  print(f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}')
 logging.info(   f'⚠️ EL SISTEMA OPERATIVO ⏩ {s_system}'   ) 
