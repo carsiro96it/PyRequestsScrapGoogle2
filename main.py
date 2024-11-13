@@ -38,7 +38,7 @@ print(resp.text[0:10000])
 
 # Guardar el contenido en un archivo
 open( s_path_result_to_save  ,  'w' , encoding = 'utf-8' )\
-    .write(  s_result.text  )
+    .write(  resp.text  )
 
 
 # print(    pd.read_html(resp.text, attrs={'width': '656'}, header=0, parse_dates=['Advertised Date']).head()    )
