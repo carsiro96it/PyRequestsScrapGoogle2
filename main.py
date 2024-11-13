@@ -20,7 +20,6 @@ print(    f"Default encoding: {sys.getdefaultencoding()}"    )
 s_fecha_inicio_ejecucion = str(  datetime.today().strftime('%Y-%m-%d %H-%M-%S') ) ; s_fecha_inicio_ejecucion=''
 
 # s_result = folder_path +'\\DATA\\RESULT\\result.html'
-s_result = folder_path +'result.html'
 s_path_result_to_save = folder_path +'result.html'
 # s_path_result_to_save = folder_path  +'DATA\\RESULT\\results_Google_'+ s_fecha_inicio_ejecucion   + '.html'
 
@@ -31,16 +30,15 @@ s_UserAgent = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebK
 # ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 resp = requests.get(   s_target_url,
                     headers = s_UserAgent   )
-print(resp.text[0:10000])
-resp.encoding = resp.apparent_encoding
-print(resp.text[0:10000])
+# print(resp.text[0:10000])
+# resp.encoding = resp.apparent_encoding
+# print(resp.text[0:10000])
 resp.encoding = 'utf-8'
 print(resp.text[0:10000])
-s_result =  str(resp)
 
 # Guardar el contenido en un archivo
 open( s_path_result_to_save  ,  'w' , encoding = 'utf-8' )\
-    .write(  s_result  )
+    .write(  s_result,text  )
 
 
 # print(    pd.read_html(resp.text, attrs={'width': '656'}, header=0, parse_dates=['Advertised Date']).head()    )
