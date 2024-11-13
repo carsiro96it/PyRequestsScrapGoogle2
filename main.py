@@ -1,4 +1,4 @@
-import brotli, inspect, logging, platform , requests, sys
+import inspect, logging, platform , requests, sys #brotli
 from datetime import datetime
 import pandas as pd
 
