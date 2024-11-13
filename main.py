@@ -30,10 +30,12 @@ s_UserAgent = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebK
 # ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 resp = requests.get(   s_target_url,
                     headers = s_UserAgent   )
+# content_type = resp.headers.get('Content-Type')
+# print(f"Content-Type: {content_type}")
+
 resp = resp.content.decode('utf-8', errors='replace')
 # Verificar el tipo de contenido
-content_type = resp.headers.get('Content-Type')
-print(f"Content-Type: {content_type}")
+
 print(  resp  )
 
 # Guardar el contenido en un archivo
