@@ -30,11 +30,21 @@ s_UserAgent = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebK
 # ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 resp = requests.get(   s_target_url,
                     headers = s_UserAgent   )
-resp.encoding = 'utf-8' 
+# Verificar el tipo de contenido
+content_type = resp.headers.get('Content-Type')
+print(f"Content-Type: {content_type}")
 
-s_result = resp.text
-# ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-with open(s_path_result_to_save, 'w', encoding='utf-8') as file:
-    file.write(resp.text)
+# Si es texto/HTML, procesar como texto
+if 'text/html' in content_type:
+    resp.encoding = 'utf-8'  # Asegurar que se decodifique como UTF-8
+    s_result = resp.text
+else:
+    # Si no es texto, manejarlo como binario
+    s_result = resp.content
+
+# Guardar el contenido en un archivo
+s_path_result_to_save = 'result.html'
+with open(s_path_result_to_save, 'wb') as file:
+    file.write(s_result)
 
 s_fecha_fin_ejecucion = str(  datetime.today().strftime('%Y-%m-%d %H-%M-%S') )
