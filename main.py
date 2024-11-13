@@ -13,9 +13,9 @@ elif s_system == "Windows":
                 .split('\\')[0:-1]
     ) + '\\'+'DATA\\RESULT\\'
 
-logging.info(   f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}'   ) ;  print(f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}')
-logging.info(   f'⚠️ EL SISTEMA OPERATIVO ⏩ {s_system}'   ) 
-logging.info(    f"Default encoding: {sys.getdefaultencoding()}"    )
+print(    f'⚠️ FOLDER PATH TO SAVE RESULTAS ⏩ {folder_path}'    )
+print(    f'⚠️ EL SISTEMA OPERATIVO ⏩ {s_system}'   ) 
+print(    f"Default encoding: {sys.getdefaultencoding()}"    )
 s_fecha_inicio_ejecucion = str(  datetime.today().strftime('%Y-%m-%d %H-%M-%S') ) ; s_fecha_inicio_ejecucion=''
 
 # s_result = folder_path +'\\DATA\\RESULT\\result.html'
