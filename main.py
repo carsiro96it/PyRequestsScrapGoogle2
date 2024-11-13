@@ -6,7 +6,7 @@ if s_system == "Linux":
     folder_path = '/'.join(
             inspect.getfile(  inspect.currentframe()  )\
                 .split('/')[0:-1]
-    ) + '/'+'DATA/RESULT/
+    ) + '/'+'DATA/RESULT/'
 elif s_system == "Windows":
     folder_path = '\\'.join(
             inspect.getfile(  inspect.currentframe()  )\
